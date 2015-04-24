@@ -1,0 +1,7 @@
+make help - This help
+make list-all-combinations - Create combinations list
+make list-all-permutations - Create permutations list
+make find-all-hands - Analyze conbinations list and print all possible hands 
+make identify_poker_hands - Create executable to print hands given cards
+make ante-up - same as identify_poker_hands
+make clean - remove intermediate files
