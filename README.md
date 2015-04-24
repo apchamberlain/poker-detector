@@ -59,7 +59,7 @@ running `identify_poker_hands` on that data takes just a few seconds.
 `make find-all-hands` will process the data file created by `make
 list-all-combinations` (or create it if it doesn't already exist),
 then generate a corresponding file with two columns, cards and poker
-hand (if there is one).  It will also print some interesting summary
+hand (if there is one).  It will also generate some interesting summary
 statistics about the number of each type of hand found in the sample
 data--in other words, answering questions like "The next time I play
 poker, what's the chance I'll be dealt a royal flush?" and so on.
@@ -70,7 +70,7 @@ poker, what's the chance I'll be dealt a royal flush?" and so on.
 If you take five cards from a standard 52-card deck, without replacing
 each card after you take it, there are 2,598,960 combinations in total
 (["52 take 5"](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
-if you remember your basic combinatorics).
+if you remember your basic combinatorics from Statistics 101).
 
 Following the principle (first written down by
 [Jon Bentley](http://www.amazon.com/dp/0201657880), I think) that code
