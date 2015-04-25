@@ -3,5 +3,6 @@ make list-all-combinations - Create combinations list
 make list-all-permutations - Create permutations list
 make find-all-hands - Analyze conbinations list and print all possible hands 
 make identify_poker_hands - Create executable to print hands given cards
-make ante-up - same as identify_poker_hands
-make clean - remove intermediate files
+make ante-up - Same as identify_poker_hands
+make clean - Remove unlinked object files and uninteresting intermediate text files 
+make spotless - Remove all text files but the summary of hand distributions

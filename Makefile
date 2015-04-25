@@ -40,3 +40,7 @@ list-permutations.o: pokerproblem.h
 .PHONY: clean
 clean:
 	rm *.o permutations-5-cards-sortedhands.txt hands-marked-unsorted.txt
+
+.PHONY: spotless
+spotless: clean
+	rm combinations-5-cards.txt permutations-5-cards-unsorted.txt hands-marked-sorted.txt hands-marked-readable.txt
