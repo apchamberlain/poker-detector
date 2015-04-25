@@ -6,13 +6,13 @@ help:
 
 
 .PHONY: list-all-combinations
-list-all-combinations: list-all-permutations sort-each-hand-by-rank.pl
+list-all-combinations: permutations-5-cards-unsorted.txt sort-each-hand-by-rank.pl
 	./sort-each-hand-by-rank.pl < permutations-5-cards-unsorted.txt > permutations-5-cards-sortedhands.txt ; cat permutations-5-cards-sortedhands.txt | sort |uniq > combinations-5-cards.txt
 
 
 .PHONY: list-all-permutations
 list-all-permutations: list-permutations
-	./list-permutations > permutations-5cards-unsorted.txt
+	./list-permutations > permutations-5-cards-unsorted.txt
 
 
 .PHONY: find-all-hands
@@ -21,6 +21,8 @@ find-all-hands: identify_poker_hands hands-readable.pl combinations-5-cards.txt
 
 
 combinations-5-cards.txt: list-all-combinations
+
+permutations-5-cards-unsorted.txt: list-all-permutations
 
 ante-up: identify_poker_hands
 
