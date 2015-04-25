@@ -30,17 +30,19 @@ Given the following hand:
 * Six of spades
 * Ace of spades
 
-...the input to `identify_poker_hands` should be `fAfBkAfDaD`.
+...the input to `identify_poker_hands` should be `fAfBcAfDaD`.
 
 The program reads from standard input, so you can try it out
-immediately, without first generating the complete set of standard data.  The
-input does not need to be sorted--the cards in each row can be in any
+immediately, without first generating the complete data set described in the next section.  The
+input does not need to be sorted--that is, not only can the lines be in any order,
+but also the cards in each row can be in any
 order (although there are two small helper
 scripts to sort all the sets of cards passed in, line by line:
 `sort-each-hand-by-rank.pl` and `sort-each-hand-by-suit.pl`).
-`identify_poker_hands` should identify the example hand just given as
-a three of a kind.  Note that although the cards also contain a pair
-(two of a kind), the three of a kind ranks higher in standard poker,
+
+For example: `identify_poker_hands` should identify the example hand just given, `fAfBcAfDaD`, as 
+a three of a kind.  Note that although the cards also contain a pair, in the sense that a pair
+is a subset of three of a kind, the three of a kind ranks higher in standard poker,
 so it takes precedence.
 
 The definitions and relative ranking of the hands are taken from [Wikipedia](http://en.wikipedia.org/wiki/List_of_poker_hands).
@@ -70,7 +72,7 @@ poker, what's the chance I'll be dealt a royal flush?" and so on.
 If you take five cards from a standard 52-card deck, without replacing
 each card after you take it, there are 2,598,960 combinations in total
 (["52 take 5"](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
-if you remember your basic combinatorics from Statistics 101).
+as they call it in Statistics 101 textbooks).
 
 Following the principle (first written down by
 [Jon Bentley](http://www.amazon.com/dp/0201657880), I think) that code
@@ -93,12 +95,13 @@ want--this latter file is "only" 29 Mb or so).
 
 # How's it work?
 
-`make help` will tell you all the possible make targets.
+`make help` will describe all the interesting targets in the `Makefile`.
 
 The heart of `identify_poker_hands.c` is the function `match()` which
 essentially implements a state machine to parse a very limited,
-specialized regular-expression-like syntax and apply it to a given
+specialized regular-expression-like syntax (optimized to describe scoring
+hands in typical card games) and apply it to a given
 test string.  Function `highhand()` defines the possible poker hands
-as patterns in this quasi-regex language and calls `match()` to test
+as patterns in this quasi-regex DSL and calls `match()` to test
 the contents of the `cards` array (in the `aA`, etc. format
 described above) against each pattern.
