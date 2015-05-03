@@ -20,3 +20,6 @@ extern int suit_first_compare(void *a, void *b);
 extern int rank_first_compare(void *a, void *b);
 extern void insertion_sort(void *data, unsigned int length, size_t chunksize, int(*compare)(void *, void*));
 
+
+
+//  http://stackoverflow.com/questions/375913/what-can-i-use-to-profile-c-code-in-linux/378024#378024

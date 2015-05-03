@@ -28,6 +28,8 @@ ante-up: identify_poker_hands
 
 identify_poker_hands: identify_poker_hands.o card_sort_helpers.o
 
+sort_each_hand_by_rank-native: sort_each_hand_by_rank-native.o card_sort_helpers.o
+
 list-permutations: card_sort_helpers.o
 
 identify_poker_hands.o: pokerproblem.h
