@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdlib.h>
+#include "pokerproblem.h"
 
 int rank_first_compare(void *a, void *b)
 {
@@ -40,7 +41,8 @@ int suit_first_compare(void *a, void *b)
 }
 
 
-/* Deliberately has the same function signature as the library qsort() */
+/* Deliberately has the same function signature as the library
+ * qsort(); should be a drop-in replacement */
 void insertion_sort(void *data, unsigned int length, size_t chunksize,
 		    int(*compare)(void *, void*))
 {
@@ -49,7 +51,8 @@ void insertion_sort(void *data, unsigned int length, size_t chunksize,
 
     swap = malloc(chunksize);
     
-    for (c = data + chunksize; c < data + chunksize * length; c += chunksize) {
+    for (c = data + chunksize; c < data + chunksize * length; c += chunksize)
+    {
 	d = c;
 	while ( d > data && compare(d, d - chunksize) < 1)
 	{
@@ -59,6 +62,7 @@ void insertion_sort(void *data, unsigned int length, size_t chunksize,
  	    d -= chunksize;
 	}
     }
+    
     free(swap);
 }
 
